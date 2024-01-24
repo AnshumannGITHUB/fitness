@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Rockwell';
+            background: linear-gradient(to bottom, #579df4, #c4dcff); /* Blue gradient background */
+            color: #fff; /* White text color */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+            position: relative; /* Make the body a positioning context */
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to bottom, #0071fa, #c4dcff); /* Gradient header background */
+            color: #fff; /* White text color */
+        }
+
+h3 {
+    text-align: center;
+}
+
+
+        .random-squares,
+        .random-squares2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .random-square,
+        .random-square2 {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+            border-radius: 3px;
+            pointer-events: none;
+            animation: drift 10s linear infinite, collision 0.5s ease infinite alternate;
+        }
+
+        .random-square {
+            background: #00aaff;
+        }
+
+        .random-square2 {
+            background: #fcfaff;
+        }
+
+        @keyframes drift {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(500px, 500px);
+            }
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-section img {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .text-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to right, #161616, #585858);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+
+               
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>FITNESS FUN!</h1>
+        <h2>
+            The webpage made to help you lose weight with loads of fun!
+        </h2>
+    </header>
+
+    <div class="random-squares"></div>
+    <div class="random-squares2"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const randomSquares = document.querySelector('.random-squares');
+
+            for (let i = 0; i < 50; i++) {
+                const square = document.createElement('div');
+                square.classList.add('random-square');
+                square.style.top = Math.random() * 100 + 'vh';
+                square.style.left = Math.random() * 100 + 'vw';
+                square.style.animation = 'drift ' + (Math.random() * 10 + 5) + 's linear infinite';
+                randomSquares.appendChild(square);
+            }
+
+            const randomSquares2 = document.querySelector('.random-squares2');
+
+            for (let i = 0; i < 50; i++) {
+                const square = document.createElement('div');
+                square.classList.add('random-square2');
+                square.style.top = Math.random() * 100 + 'vh';
+                square.style.left = Math.random() * 100 + 'vw';
+                square.style.animation = 'drift ' + (Math.random() * 10 + 5) + 's linear infinite';
+                randomSquares2.appendChild(square);
+            }
+        });
+    </script>
+<h3>THESE WORKOUTS ARE FOR PEOPLE WHO WANT TO TAKE IT SLOW:</h3>
+    <div class="image-section">
+        <img src="https://th.bing.com/th/id/OIP.HZIxJzJ6ImpdcoSmwBsRUAHaEK?w=304&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Image 1">
+        <img src="https://th.bing.com/th/id/OIP.Asa_f7cevXyJp5uEFi6YzAHaE7?pid=ImgDet&w=474&h=315&rs=1" alt="Image 2">
+        <img src="https://th.bing.com/th/id/OIP.yzgMr-J8RrSjRJMD1-KmRQHaE8?pid=ImgDet&w=474&h=316&rs=1" alt="Image 3">
+        <img src="https://www.trainerize.me/articles/wp-content/uploads/2019/11/Physical-Fitness.jpg" alt="Image 4">
+    </div>
+
+    <h3>THESE WORKOUTS ARE FOR PEOPLE WHO WANT TO TAKE IT HARDCORE AND WANT A CHALLENGING WORKOUT:</h3>
+    <div class="image-section">
+        <img src="https://th.bing.com/th/id/OIP.-nKmoqtnqughdMw74ZnrRwHaE8?pid=ImgDet&w=474&h=316&rs=1">
+        <img src="https://olympiafitnessri.com/wp-content/uploads/2021/03/People-doing-pushups-together-in-a-health-club-class-853407238_5976x3984-scaled-e1615396175580.jpeg" alt="Image 6">
+        <img src="https://d.newsweek.com/en/full/1524142/cardio-workout.jpg" alt="Image 7">
+        <img src="https://fit.life/wp-content/uploads/2020/03/fitlife_home_workout.jpg" alt="Image 8">
+    </div>
+
+    <div class="text-section">
+        <h2>Follow one of these fitness routines daily for 2 weeks to lose a fair amount of weight! Be sure to do these excersizes for at least 30 minutes everyday! Also remember that this alone won't do much unless you are also partaking in daily walks that length upto 30 minutes to an hour. Follow these steps to lose weight quick!</h2>
+    </div>
+
+    <div class="footer">
+        <p>2024 LIFE-LY!© All rights reserved</p>
+    </div>
+
+</body>
+
+</html>
